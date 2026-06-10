@@ -2,390 +2,249 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>Cedro • Carpintaria &amp; Alvenaria | Governador Valadares</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedro • Carpintaria &amp; Alvenaria</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .heading-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-        }
-
-        .hero-bg {
-            background: linear-gradient(rgba(59, 47, 47, 0.78), rgba(59, 47, 47, 0.68)), url('https://picsum.photos/id/1018/2000/1200');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .nav-scrolled {
-            background: rgba(255,255,255,0.98);
-            box-shadow: 0 1px 0 0 rgb(0 0 0 / 0.05);
-        }
-
-        .section-header {
-            font-size: 2.5rem;
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-        }
-
-        @media (max-width: 640px) {
-            .section-header {
-                font-size: 2.1rem;
-            }
-        }
-
-        .trust-badge {
-            background: linear-gradient(to right, #f8fafc, #ffffff);
-        }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-900">
+<body class="bg-[#f8f1e9] text-[#3B2F2F]">
     <!-- Navbar -->
-    <nav class="bg-white border-b border-stone-200 sticky top-0 z-50">
-        <div class="max-w-screen-2xl mx-auto px-5">
-            <div class="h-16 flex items-center justify-between">
-                <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 bg-[#3B2F2F] rounded-2xl flex items-center justify-center">
-                        <span class="text-white text-2xl font-bold tracking-tighter">C</span>
-                    </div>
-                    <span class="font-semibold text-2xl tracking-tight">Cedro</span>
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-[#3B2F2F] rounded-2xl flex items-center justify-center">
+                    <span class="text-white text-2xl font-bold">C</span>
                 </div>
-                
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#servicos" class="hover:text-stone-600">Serviços</a>
-                    <a href="#projetos" class="hover:text-stone-600">Projetos</a>
-                    <a href="#sobre" class="hover:text-stone-600">Sobre</a>
+                <div>
+                    <span class="font-semibold text-2xl">Cedro</span>
+                    <span class="text-xs text-[#3B2F2F]/60 block -mt-1">CARPINTARIA &amp; ALVENARIA</span>
                 </div>
-                
-                <div class="flex items-center gap-x-2">
-                    <a href="https://wa.me/12679053490?text=Olá!%20Gostaria%20de%20um%20orçamento" 
-                       target="_blank"
-                       class="hidden sm:flex items-center px-4 py-2 text-sm border border-stone-300 rounded-3xl hover:bg-stone-100 transition-colors">
-                        <i class="fa-brands fa-whatsapp mr-2"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    
-                    <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})" 
-                            class="px-5 py-2.5 bg-[#3B2F2F] text-white text-sm font-semibold rounded-3xl active:scale-[0.985]">
-                        Orçamento
-                    </button>
-                </div>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <a href="https://wa.me/12679053490" target="_blank" 
+                   class="px-5 py-2.5 text-sm font-medium border border-[#3B2F2F]/30 rounded-3xl hover:bg-[#3B2F2F] hover:text-white transition-all flex items-center gap-x-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button onclick="document.getElementById('briefing').scrollIntoView({behavior:'smooth'})" 
+                        class="px-6 py-2.5 bg-[#3B2F2F] text-white text-sm font-semibold rounded-3xl">
+                    Solicitar Orçamento
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero-bg h-[88vh] flex items-center relative">
-        <div class="max-w-screen-2xl mx-auto px-5 pt-8">
-            <div class="max-w-[620px]">
-                <div class="inline-flex items-center gap-x-2 bg-white/90 px-4 h-8 rounded-3xl mb-5 text-xs tracking-[1px]">
-                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-                    <span class="font-medium text-stone-700">GOVERNADOR VALADARES • MG</span>
-                </div>
-                
-                <h1 class="text-white text-[3.1rem] leading-[1.05] md:text-7xl tracking-[-2.2px] font-semibold heading-serif">
-                    Carpintaria<br>e alvenaria<br>com alma.
-                </h1>
-                
-                <p class="mt-5 text-lg max-w-[340px] text-white/90">
-                    Projetos sob medida com acabamento impecável para quem valoriza qualidade de verdade em Valadares e região.
-                </p>
-                
-                <div class="mt-9 flex flex-wrap gap-3">
-                    <a href="https://wa.me/12679053490?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20meu%20projeto." 
-                       target="_blank"
-                       class="px-8 py-4 bg-white text-[#3B2F2F] font-semibold rounded-3xl flex items-center gap-x-2 active:scale-[0.985]">
-                        <i class="fa-brands fa-whatsapp mr-2"></i>
-                        <span>Pedir orçamento no WhatsApp</span>
-                    </a>
-                    <button onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})" 
-                            class="px-7 py-4 border border-white/60 text-white font-medium rounded-3xl">
-                        Ver projetos
-                    </button>
-                </div>
-                
-                <div class="mt-8 flex items-center gap-x-3 text-white/70 text-sm">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/1005/28/28"></div>
-                        <div class="w-7 h-7 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/1009/28/28"></div>
-                        <div class="w-7 h-7 rounded-full border border-white overflow-hidden"><img src="https://picsum.photos/id/1011/28/28"></div>
-                    </div>
-                    <span>+180 projetos entregues</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust Bar -->
-    <div class="max-w-screen-2xl mx-auto px-5 -mt-3 relative z-10">
-        <div class="trust-badge border border-stone-200 rounded-3xl px-6 py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-stone-600">
-            <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>14 anos de mercado</span></div>
-            <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>98% de satisfação</span></div>
-            <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Atendimento em até 4h</span></div>
-        </div>
-    </div>
-
-    <!-- Serviços -->
-    <section id="servicos" class="max-w-screen-2xl mx-auto px-5 pt-20 pb-12">
-        <div class="mb-9">
-            <span class="text-xs font-semibold tracking-[2px] text-stone-500">SERVIÇOS</span>
-            <h2 class="section-header tracking-tighter mt-1">O que fazemos de melhor</h2>
+    <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 text-center">
+        <div class="inline-flex items-center gap-x-2 bg-white px-4 h-8 rounded-3xl mb-6 border text-xs tracking-widest">
+            GOVERNADOR VALADARES • MG
         </div>
         
-        <div class="grid md:grid-cols-3 gap-5">
-            <div class="service-card bg-white p-7 rounded-3xl border border-stone-100">
-                <div class="w-11 h-11 bg-amber-100 flex items-center justify-center rounded-2xl mb-6">
-                    <i class="fa-solid fa-hammer text-amber-700 text-3xl"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight">Carpintaria sob medida</h3>
-                <p class="mt-3 text-stone-600 text-[15px]">Móveis, escadas, decks, portas e esquadrias com madeira nobre e acabamento impecável.</p>
-            </div>
-            
-            <div class="service-card bg-white p-7 rounded-3xl border border-stone-100">
-                <div class="w-11 h-11 bg-stone-200 flex items-center justify-center rounded-2xl mb-6">
-                    <i class="fa-solid fa-brick-wall text-stone-700 text-3xl"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight">Alvenaria estrutural</h3>
-                <p class="mt-3 text-stone-600 text-[15px]">Alvenaria de vedação, reboco, emboço e acabamentos de alto padrão.</p>
-            </div>
-            
-            <div class="service-card bg-white p-7 rounded-3xl border border-stone-100">
-                <div class="w-11 h-11 bg-emerald-100 flex items-center justify-center rounded-2xl mb-6">
-                    <i class="fa-solid fa-tools text-emerald-700 text-3xl"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight">Reformas completas</h3>
-                <p class="mt-3 text-stone-600 text-[15px]">Gestão completa de reformas residenciais e comerciais com cronograma rigoroso.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Por que escolher -->
-    <section class="bg-white border-y border-stone-200 py-14">
-        <div class="max-w-screen-2xl mx-auto px-5">
-            <div class="text-center mb-10">
-                <span class="text-xs font-semibold tracking-[2px] text-stone-500">DIFERENCIAIS</span>
-                <h2 class="section-header tracking-tighter mt-1">Por que escolher a Cedro?</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="text-center px-4">
-                    <i class="fa-solid fa-award text-3xl text-amber-600 mb-4"></i>
-                    <div class="font-semibold">Qualidade premium</div>
-                    <div class="text-sm text-stone-600 mt-1">Acabamento impecável em todos os projetos</div>
-                </div>
-                <div class="text-center px-4">
-                    <i class="fa-solid fa-clock text-3xl text-amber-600 mb-4"></i>
-                    <div class="font-semibold">Prazo cumprido</div>
-                    <div class="text-sm text-stone-600 mt-1">Cronograma rigoroso e comunicação clara</div>
-                </div>
-                <div class="text-center px-4">
-                    <i class="fa-solid fa-users text-3xl text-amber-600 mb-4"></i>
-                    <div class="font-semibold">Equipe experiente</div>
-                    <div class="text-sm text-stone-600 mt-1">31 anos de experiência combinada</div>
-                </div>
-                <div class="text-center px-4">
-                    <i class="fa-solid fa-handshake text-3xl text-amber-600 mb-4"></i>
-                    <div class="font-semibold">Atendimento próximo</div>
-                    <div class="text-sm text-stone-600 mt-1">Resposta em até 4 horas via WhatsApp</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projetos" class="bg-[#3B2F2F] py-16 text-white">
-        <div class="max-w-screen-2xl mx-auto px-5">
-            <div class="flex items-end justify-between mb-9">
-                <div>
-                    <span class="uppercase text-xs tracking-[2.5px] text-white/60">DESTAQUES</span>
-                    <h2 class="section-header tracking-tighter">Projetos recentes</h2>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-5">
-                <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
-                    <img src="https://picsum.photos/id/1015/800/600" class="w-full h-full object-cover" alt="">
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="text-xs opacity-75">VALADARES, MG</div>
-                        <div class="font-semibold text-3xl tracking-tight">Casa Moderna</div>
-                    </div>
-                </div>
-                <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
-                    <img src="https://picsum.photos/id/160/800/600" class="w-full h-full object-cover" alt="">
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="text-xs opacity-75">VALADARES, MG</div>
-                        <div class="font-semibold text-3xl tracking-tight">Cozinha de Luxo</div>
-                    </div>
-                </div>
-                <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
-                    <img src="https://picsum.photos/id/201/800/600" class="w-full h-full object-cover" alt="">
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <div class="text-xs opacity-75">VALADARES, MG</div>
-                        <div class="font-semibold text-3xl tracking-tight">Deck &amp; Pergolado</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="sobre" class="max-w-screen-2xl mx-auto px-5 py-20">
-        <div class="mb-12">
-            <span class="text-xs font-semibold tracking-[2px] text-stone-500">NOSSA ESSÊNCIA</span>
-            <h2 class="section-header tracking-tighter mt-2">Tradição,<br>precisão e alma.</h2>
-            <p class="mt-6 text-[15px] max-w-[42ch] text-stone-600">Cedro nasceu da paixão por madeira nobre e construção bem feita. Desde 2012 entregamos projetos que resistem ao tempo em Valadares e região.</p>
-        </div>
+        <h1 class="text-6xl md:text-7xl font-semibold heading-serif tracking-tighter leading-none">
+            Carpintaria e<br>alvenaria com alma.
+        </h1>
         
-        <div class="grid md:grid-cols-2 gap-6">
-            <!-- Luiz Henrique -->
-            <div class="bg-white border border-stone-200 rounded-3xl p-8">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <div class="font-semibold text-xl">Luiz Henrique</div>
-                        <div class="text-sm text-stone-500">Carpintaria e Acabamento</div>
-                    </div>
-                    <div class="font-mono text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-2xl">6 ANOS</div>
-                </div>
-                <div class="h-px bg-stone-100 my-6"></div>
-                <div class="text-sm text-stone-600">"Especialista em carpintaria fina, acabamentos de alto padrão e projetos personalizados com precisão e cuidado."</div>
-            </div>
-            
-            <!-- Luis Carlos -->
-            <div class="bg-white border border-stone-200 rounded-3xl p-8">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <div class="font-semibold text-xl">Luis Carlos</div>
-                        <div class="text-sm text-stone-500">Alvenaria • Wood Framing • Telhados</div>
-                    </div>
-                    <div class="font-mono text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-2xl">25 ANOS</div>
-                </div>
-                <div class="h-px bg-stone-100 my-6"></div>
-                <div class="text-sm text-stone-600">"Mestre em alvenaria estrutural, wood framing e telhados. Experiência sólida em obras de grande porte e reformas complexas."</div>
-            </div>
+        <p class="mt-6 max-w-md mx-auto text-lg text-[#3B2F2F]/70">
+            Projetos sob medida com acabamento impecável para quem valoriza qualidade de verdade.
+        </p>
+        
+        <div class="mt-10 flex justify-center gap-4">
+            <button onclick="document.getElementById('briefing').scrollIntoView({behavior:'smooth'})" 
+                    class="px-9 py-4 bg-[#3B2F2F] text-white font-semibold rounded-3xl text-base">
+                Iniciar Briefing
+            </button>
+            <button onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})" 
+                    class="px-8 py-4 border border-[#3B2F2F]/30 font-medium rounded-3xl">
+                Ver projetos
+            </button>
         </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section class="bg-stone-100 py-16">
-        <div class="max-w-screen-2xl mx-auto px-5">
-            <div class="text-center mb-10">
-                <span class="text-xs font-semibold tracking-[2px] text-stone-500">O QUE NOSSOS CLIENTES DIZEM</span>
+    <!-- Briefing Form -->
+    <section id="briefing" class="max-w-3xl mx-auto px-6 pb-24">
+        <div class="bg-white rounded-3xl p-9 border shadow-xl">
+            <div class="text-center mb-8">
+                <div class="text-xs tracking-[2px] text-[#3B2F2F]/60">PASSO A PASSO</div>
+                <h2 class="text-4xl font-semibold heading-serif mt-1">Briefing do Projeto</h2>
+                <p class="text-[#3B2F2F]/60 mt-2">Quanto mais detalhes, mais preciso seu orçamento.</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-7 rounded-3xl border border-stone-200">
-                    <div class="flex text-amber-500 mb-4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="text-sm">"Excelente trabalho na reforma da minha cozinha. Luiz Henrique foi muito atencioso e o acabamento ficou perfeito."</div>
-                    <div class="mt-6 text-xs font-medium">— Ana Paula, Valadares</div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-stone-200">
-                    <div class="flex text-amber-500 mb-4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <div class="text-sm">"Luis Carlos fez o telhado da minha casa com maestria. Equipe profissional e prazo cumprido."</div>
-                    <div class="mt-6 text-xs font-medium">— Roberto Mendes, Governador Valadares</div>
-                </div>
-                <div class="bg-white p-7 rounded-3xl border border-stone-200">
-                    <div class="flex text-amber-500 mb-4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div class="text-sm">"Recomendo de olhos fechados. Trabalho de alta qualidade e comunicação excelente durante toda a obra."</div>
-                    <div class="mt-6 text-xs font-medium">— Carla Souza, Valadares</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contato -->
-    <section id="contato" class="bg-stone-900 py-16 text-white">
-        <div class="max-w-screen-2xl mx-auto px-5">
-            <div class="max-w-xl">
-                <h2 class="text-5xl font-semibold tracking-tighter heading-serif">Vamos construir algo incrível juntos.</h2>
-            </div>
-            
-            <div class="mt-12 grid md:grid-cols-2 gap-x-12">
-                <form class="space-y-5" onsubmit="event.preventDefault(); window.open('https://wa.me/12679053490?text=Olá!%20Gostaria%20de%20um%20orçamento.', '_blank');">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Seu nome" class="bg-white/5 border border-white/20 px-5 py-3.5 text-sm rounded-3xl w-full">
-                        <input type="tel" placeholder="(33) 0000-0000" class="bg-white/5 border border-white/20 px-5 py-3.5 text-sm rounded-3xl w-full">
-                    </div>
-                    <select class="bg-white/5 border border-white/20 px-5 py-3.5 text-sm rounded-3xl w-full">
-                        <option>Carpintaria sob medida</option>
-                        <option>Alvenaria e reforma</option>
-                        <option>Deck / Pergolado</option>
-                        <option>Reforma completa</option>
-                    </select>
-                    <textarea placeholder="Descreva seu projeto..." rows="3" class="bg-white/5 border border-white/20 px-5 py-3.5 text-sm rounded-3xl w-full resize-y"></textarea>
+            <form id="briefingForm" onsubmit="enviarParaWhatsApp(event)">
+                <!-- Dados do Cliente -->
+                <div class="mb-8">
+                    <div class="uppercase text-xs tracking-widest text-[#3B2F2F]/50 mb-3">DADOS DO CLIENTE</div>
                     
-                    <button type="submit" 
-                            class="mt-2 w-full bg-white py-4 text-[#3B2F2F] font-semibold rounded-3xl active:bg-amber-50 flex items-center justify-center gap-x-2">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>ENVIAR NO WHATSAPP</span>
-                    </button>
-                </form>
-                
-                <div class="mt-10 md:mt-4 text-sm text-white/70 space-y-6">
-                    <div>
-                        <div class="font-medium text-white mb-1">WhatsApp</div>
-                        <a href="https://wa.me/12679053490" target="_blank" class="hover:text-white transition-colors">(267) 905-3490</a>
-                    </div>
-                    <div>
-                        <div class="font-medium text-white mb-1">Email</div>
-                        <a href="mailto:contato@cedrooh.com">contato@cedrooh.com</a>
-                    </div>
-                    <div class="pt-4 border-t border-white/20 text-xs">
-                        Atendemos Governador Valadares e toda a região do Vale do Rio Doce.
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-sm font-medium">Nome Completo *</label>
+                            <input type="text" id="nome" required class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-sm font-medium">E-mail *</label>
+                                <input type="email" id="email" required class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium">Telefone / WhatsApp *</label>
+                                <input type="tel" id="telefone" required class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Cidade / Estado</label>
+                            <input type="text" id="cidade" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Governador Valadares, MG">
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Detalhes do Projeto -->
+                <div class="mb-8">
+                    <div class="uppercase text-xs tracking-widest text-[#3B2F2F]/50 mb-3">DETALHES DO PROJETO</div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-sm font-medium">Tipo de Serviço *</label>
+                            <select id="servico" required class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                                <option value="">Selecione...</option>
+                                <option>Carpintaria sob medida</option>
+                                <option>Alvenaria estrutural</option>
+                                <option>Reforma completa</option>
+                                <option>Deck / Pergolado</option>
+                                <option>Telhado / Wood Framing</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Finalidade do Espaço</label>
+                            <input type="text" id="finalidade" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Residencial / Comercial">
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Endereço / Local da Obra</label>
+                            <input type="text" id="endereco" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-sm font-medium">Dimensões Aproximadas</label>
+                                <input type="text" id="dimensoes" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Ex: 12m²">
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium">Prazo Desejado</label>
+                                <input type="text" id="prazo" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Em até 2 meses">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Faixa de Investimento (R$)</label>
+                            <select id="investimento" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm">
+                                <option value="">Selecione...</option>
+                                <option>R$ 5.000 - R$ 15.000</option>
+                                <option>R$ 15.000 - R$ 35.000</option>
+                                <option>R$ 35.000 - R$ 70.000</option>
+                                <option>Acima de R$ 70.000</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estilo & Materiais -->
+                <div class="mb-8">
+                    <div class="uppercase text-xs tracking-widest text-[#3B2F2F]/50 mb-3">ESTILO &amp; MATERIAIS</div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-sm font-medium">Estilo Preferido</label>
+                            <input type="text" id="estilo" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Moderno / Rústico / Minimalista">
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Material de Madeira Preferido</label>
+                            <input type="text" id="madeira" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Carvalho, Ipê, Eucalipto...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações Adicionais -->
+                <div>
+                    <div class="uppercase text-xs tracking-widest text-[#3B2F2F]/50 mb-3">INFORMAÇÕES ADICIONAIS</div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-sm font-medium">Descreva seu projeto em detalhes</label>
+                            <textarea id="descricao" rows="4" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Ex: Quero uma cozinha planejada em carvalho com ilha central..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Como nos encontrou?</label>
+                            <input type="text" id="como" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm" placeholder="Indicação / Instagram / Google">
+                        </div>
+                        
+                        <div>
+                            <label class="text-sm font-medium">Observações ou dúvidas finais</label>
+                            <textarea id="observacoes" rows="2" class="mt-1 w-full border border-[#3B2F2F]/20 px-5 py-3.5 rounded-3xl text-sm"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" 
+                        class="mt-8 w-full py-4 bg-[#3B2F2F] hover:bg-[#2C2424] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3 text-base">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Enviar Briefing e Abrir WhatsApp</span>
+                </button>
+            </form>
         </div>
     </section>
-    
-    <footer class="bg-[#2C2424] py-8 text-center text-xs text-white/50">
-        © 2026 Cedro Carpintaria &amp; Alvenaria — Governador Valadares e região
-    </footer>
 
     <script>
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 30) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
-        });
+        function enviarParaWhatsApp(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const cidade = document.getElementById('cidade').value;
+            const servico = document.getElementById('servico').value;
+            const finalidade = document.getElementById('finalidade').value;
+            const endereco = document.getElementById('endereco').value;
+            const dimensoes = document.getElementById('dimensoes').value;
+            const prazo = document.getElementById('prazo').value;
+            const investimento = document.getElementById('investimento').value;
+            const estilo = document.getElementById('estilo').value;
+            const madeira = document.getElementById('madeira').value;
+            const descricao = document.getElementById('descricao').value;
+            const como = document.getElementById('como').value;
+            const observacoes = document.getElementById('observacoes').value;
+
+            let mensagem = `*Novo Briefing - Cedro*\n\n`;
+            mensagem += `*Nome:* ${nome}\n`;
+            mensagem += `*Email:* ${email}\n`;
+            mensagem += `*Telefone:* ${telefone}\n`;
+            mensagem += `*Cidade:* ${cidade}\n\n`;
+            mensagem += `*Serviço:* ${servico}\n`;
+            mensagem += `*Finalidade:* ${finalidade}\n`;
+            mensagem += `*Endereço:* ${endereco}\n`;
+            mensagem += `*Dimensões:* ${dimensoes}\n`;
+            mensagem += `*Prazo:* ${prazo}\n`;
+            mensagem += `*Investimento:* ${investimento}\n\n`;
+            mensagem += `*Estilo:* ${estilo}\n`;
+            mensagem += `*Madeira:* ${madeira}\n\n`;
+            mensagem += `*Descrição:* ${descricao}\n\n`;
+            mensagem += `*Como nos encontrou:* ${como}\n`;
+            mensagem += `*Observações:* ${observacoes}`;
+
+            const url = `https://wa.me/12679053490?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
         
-        console.log('%c[Cedro v5] Landing page otimizada com padrões de alta conversão.', 'color:#666');
+        // Tailwind script
+        console.log('%c[Cedro] Landing page com briefing completo carregada.', 'color:#666');
     </script>
 </body>
 </html>
