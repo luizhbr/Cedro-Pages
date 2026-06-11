@@ -11,7 +11,7 @@
         .heading-serif { font-family: 'Playfair Display', Georgia, serif; }
     </style>
 </head>
-<body class="bg-[#f8f1e9] text-[#3B2F2F]">
+<body class="bg-stone-50 text-[#3B2F2F]">
     <!-- Navbar -->
     <nav class="bg-white border-b sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -23,12 +23,12 @@
             </div>
             
             <div class="flex items-center gap-x-4">
-                <a href="https://wa.me/12679053490" target="_blank" class="px-5 py-2.5 text-sm font-medium border border-[#3B2F2F]/30 rounded-3xl flex items-center gap-x-2">
+                <a href="https://wa.me/12679053490" target="_blank" class="px-5 py-2.5 text-sm font-medium border border-[#3B2F2F]/30 rounded-3xl hover:bg-[#3B2F2F] hover:text-white transition-all flex items-center gap-x-2">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>WhatsApp</span>
                 </a>
-                <button onclick="mostrarLoginGoogle()" class="px-6 py-2.5 bg-[#3B2F2F] text-white text-sm font-semibold rounded-3xl">
-                    Fazer Orçamento
+                <button onclick="document.getElementById('briefing').scrollIntoView({behavior:'smooth'})" class="px-6 py-2.5 bg-[#3B2F2F] text-white text-sm font-semibold rounded-3xl">
+                    Solicitar Orçamento
                 </button>
             </div>
         </div>
@@ -48,128 +48,140 @@
             Projetos sob medida com acabamento impecável para quem valoriza qualidade de verdade.
         </p>
         
-        <div class="mt-10">
-            <button onclick="mostrarLoginGoogle()" 
-                    class="px-9 py-4 bg-[#3B2F2F] text-white font-semibold rounded-3xl text-base">
-                Fazer meu orçamento agora
+        <div class="mt-10 flex justify-center gap-4">
+            <button onclick="mostrarLoginGoogle()" class="px-9 py-4 bg-[#3B2F2F] text-white font-semibold rounded-3xl text-base flex items-center gap-x-3">
+                <i class="fa-brands fa-google"></i>
+                <span>Faça seu orçamento agora</span>
+            </button>
+            <button onclick="document.getElementById('projetos').scrollIntoView({behavior:'smooth'})" class="px-8 py-4 border border-[#3B2F2F]/30 font-medium rounded-3xl">
+                Ver projetos
             </button>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section class="max-w-6xl mx-auto px-6 pb-16">
-        <div class="grid md:grid-cols-3 gap-5">
-            <div class="bg-white p-7 rounded-3xl border">
-                <div class="w-11 h-11 bg-amber-100 flex items-center justify-center rounded-2xl mb-5">
-                    <i class="fa-solid fa-hammer text-amber-700 text-3xl"></i>
+    <!-- Projetos -->
+    <section id="projetos" class="max-w-6xl mx-auto px-6 pb-20">
+        <div class="text-center mb-10">
+            <span class="text-xs font-semibold tracking-[2px] text-stone-500">DESTAQUES</span>
+            <h2 class="text-4xl font-semibold heading-serif tracking-tighter mt-1">Projetos recentes</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
+                <img src="https://picsum.photos/id/1015/800/600" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <div class="text-xs opacity-75">VALADARES, MG</div>
+                    <div class="font-semibold text-3xl tracking-tight">Casa Moderna</div>
                 </div>
-                <h3 class="font-semibold text-2xl">Carpintaria sob medida</h3>
             </div>
-            <div class="bg-white p-7 rounded-3xl border">
-                <div class="w-11 h-11 bg-stone-200 flex items-center justify-center rounded-2xl mb-5">
-                    <i class="fa-solid fa-brick-wall text-stone-700 text-3xl"></i>
+            <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
+                <img src="https://picsum.photos/id/160/800/600" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <div class="text-xs opacity-75">VALADARES, MG</div>
+                    <div class="font-semibold text-3xl tracking-tight">Cozinha de Luxo</div>
                 </div>
-                <h3 class="font-semibold text-2xl">Alvenaria estrutural</h3>
             </div>
-            <div class="bg-white p-7 rounded-3xl border">
-                <div class="w-11 h-11 bg-emerald-100 flex items-center justify-center rounded-2xl mb-5">
-                    <i class="fa-solid fa-tools text-emerald-700 text-3xl"></i>
+            <div class="rounded-3xl overflow-hidden relative aspect-[16/10]">
+                <img src="https://picsum.photos/id/201/800/600" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 p-6 text-white">
+                    <div class="text-xs opacity-75">VALADARES, MG</div>
+                    <div class="font-semibold text-3xl tracking-tight">Deck &amp; Pergolado</div>
                 </div>
-                <h3 class="font-semibold text-2xl">Reformas completas</h3>
             </div>
         </div>
     </section>
 
-    <!-- Login Google Modal -->
-    <div id="loginModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-        <div class="bg-white rounded-3xl p-8 w-full max-w-md mx-4">
-            <div class="text-center">
-                <h3 class="text-2xl font-semibold">Entre com sua conta</h3>
-                <p class="text-sm text-[#3B2F2F]/60 mt-2">Para salvar seu histórico de briefings e orçamentos</p>
+    <!-- Sobre -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <div class="font-semibold text-xl">Luiz Henrique</div>
+                <div class="text-sm text-stone-500">Carpintaria e Acabamento • 6 anos</div>
+                <div class="mt-4 text-sm text-stone-600">"Especialista em carpintaria fina e acabamentos de alto padrão."</div>
             </div>
-            
-            <button onclick="simularLoginGoogle()" 
-                    class="mt-8 w-full flex items-center justify-center gap-x-3 border py-3.5 rounded-3xl hover:bg-stone-50">
-                <i class="fa-brands fa-google text-xl"></i>
-                <span class="font-medium">Continuar com Google</span>
-            </button>
-            
-            <div class="text-center mt-6 text-xs text-[#3B2F2F]/50">
-                Seus dados ficam seguros e você pode ver todos os seus briefings depois.
+            <div>
+                <div class="font-semibold text-xl">Luis Carlos</div>
+                <div class="text-sm text-stone-500">Alvenaria • Wood Framing • Telhados • 25 anos</div>
+                <div class="mt-4 text-sm text-stone-600">"Mestre em alvenaria estrutural e telhados de grande porte."</div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Briefing Form -->
-    <div id="briefingSection" class="hidden max-w-3xl mx-auto px-6 pb-24">
-        <div class="bg-white rounded-3xl p-9 border shadow-xl">
+    <!-- Briefing -->
+    <section id="briefing" class="max-w-3xl mx-auto px-6 pb-24 hidden">
+        <div class="bg-white rounded-3xl p-9 border">
             <div class="text-center mb-8">
-                <h2 class="text-4xl font-semibold heading-serif">Briefing do Projeto</h2>
+                <h2 class="text-3xl font-semibold heading-serif">Briefing do Projeto</h2>
             </div>
 
             <form id="briefingForm" onsubmit="enviarParaWhatsApp(event)">
                 <!-- Campos do briefing (mesmo da versão anterior) -->
                 <div class="space-y-5">
-                    <div>
-                        <label class="text-sm font-medium">Nome Completo</label>
-                        <input type="text" id="nome" class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm" required>
-                    </div>
-                    
+                    <div><label class="text-sm font-medium">Nome Completo</label><input type="text" id="nome" required class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm"></div>
                     <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="text-sm font-medium">E-mail</label>
-                            <input type="email" id="email" class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm" required>
-                        </div>
-                        <div>
-                            <label class="text-sm font-medium">Telefone</label>
-                            <input type="tel" id="telefone" class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm" required>
-                        </div>
+                        <div><label class="text-sm font-medium">E-mail</label><input type="email" id="email" required class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm"></div>
+                        <div><label class="text-sm font-medium">Telefone</label><input type="tel" id="telefone" required class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm"></div>
                     </div>
-                    
-                    <div>
-                        <label class="text-sm font-medium">Tipo de Serviço</label>
-                        <select id="servico" class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm" required>
-                            <option value="">Selecione...</option>
+                    <div><label class="text-sm font-medium">Tipo de Serviço</label>
+                        <select id="servico" required class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm">
                             <option>Carpintaria sob medida</option>
                             <option>Alvenaria estrutural</option>
                             <option>Reforma completa</option>
-                            <option>Deck / Pergolado</option>
                         </select>
                     </div>
-                    
-                    <div>
-                        <label class="text-sm font-medium">Descreva seu projeto</label>
-                        <textarea id="descricao" rows="4" class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm" required></textarea>
-                    </div>
+                    <div><label class="text-sm font-medium">Descreva seu projeto</label><textarea id="descricao" rows="3" required class="mt-1 w-full border px-5 py-3.5 rounded-3xl text-sm"></textarea></div>
                 </div>
 
                 <button type="submit" class="mt-8 w-full py-4 bg-[#3B2F2F] text-white font-semibold rounded-3xl flex items-center justify-center gap-x-3">
                     <i class="fa-brands fa-whatsapp"></i>
-                    <span>Enviar para WhatsApp</span>
+                    <span>Enviar Briefing e Abrir WhatsApp</span>
                 </button>
             </form>
         </div>
-    </div>
+    </section>
 
     <script>
         function mostrarLoginGoogle() {
-            document.getElementById('loginModal').classList.remove('hidden');
-            document.getElementById('loginModal').classList.add('flex');
+            const loginHTML = `
+                <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-50" onclick="this.remove()">
+                    <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl p-8 max-w-sm w-full mx-4">
+                        <div class="text-center">
+                            <i class="fa-brands fa-google text-4xl mb-4"></i>
+                            <h3 class="font-semibold text-xl">Entre com sua conta</h3>
+                            <p class="text-sm text-stone-600 mt-2">Para fazer seu orçamento e salvar seu histórico</p>
+                            
+                            <button onclick="simularLoginGoogle(this)" class="mt-8 w-full py-3.5 border border-stone-300 rounded-3xl flex items-center justify-center gap-x-3 hover:bg-stone-50">
+                                <i class="fa-brands fa-google"></i>
+                                <span>Continuar com Google</span>
+                            </button>
+                            
+                            <div class="text-[10px] text-stone-400 mt-6">Seus dados ficam salvos para próximos orçamentos</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', loginHTML);
         }
         
-        function simularLoginGoogle() {
-            document.getElementById('loginModal').classList.remove('flex');
-            document.getElementById('loginModal').classList.add('hidden');
-            document.getElementById('briefingSection').classList.remove('hidden');
-            // Simula login
-            document.getElementById('email').value = "cliente@gmail.com";
+        function simularLoginGoogle(btn) {
+            btn.innerHTML = `<span class="flex items-center justify-center gap-x-2"><i class="fa-solid fa-spinner fa-spin"></i> Conectando...</span>`;
+            setTimeout(() => {
+                btn.closest('.fixed').remove();
+                document.getElementById('briefing').classList.remove('hidden');
+                document.getElementById('briefing').scrollIntoView({behavior: 'smooth'});
+            }, 1200);
         }
         
         function enviarParaWhatsApp(e) {
             e.preventDefault();
             const nome = document.getElementById('nome').value;
-            const mensagem = `Olá! Meu nome é ${nome}. Gostaria de um orçamento.`;
-            window.open(`https://wa.me/12679053490?text=${encodeURIComponent(mensagem)}`, '_blank');
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const servico = document.getElementById('servico').value;
+            const descricao = document.getElementById('descricao').value;
+
+            const mensagem = `*Briefing Cedro*%0A%0A*Nome:* ${nome}%0A*Email:* ${email}%0A*Telefone:* ${telefone}%0A*Serviço:* ${servico}%0A*Descrição:* ${descricao}`;
+            window.open(`https://wa.me/12679053490?text=${mensagem}`, '_blank');
         }
     </script>
 </body>
